@@ -1,0 +1,110 @@
+<p>class-form works!</p>
+
+<div>
+    <h1>Recive Form</h1>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" id="out">
+        <table>
+
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" formControlName="name" /></td>
+            </tr>
+            <br>
+            <div style="color: red;" *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+                Name is required
+            </div>
+            <!-- <div style="color: red;" *ngIf="name?.hasError('required')">
+                Name must required
+            </div>
+            <div style="color: red;" *ngIf="name?.hasError('minlength')">
+                Name must be at least 3 characters
+            </div>
+            <div style="color: red;" *ngIf="name?.hasError('maxlength')">
+                Name must be at most 10 characters
+            </div> -->
+
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" formControlName="email" /></td>
+            </tr>
+
+
+            <br>
+            <div style="color: red;" *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+                Email is required
+            </div>
+            <div style="color: red;" *ngIf="email?.hasError('email')">
+                Email must be a valid email address
+            </div>
+            <!-- <div style="color: red;" *ngIf="email?.hasError('required')">
+                Email must required
+            </div>
+            
+            <div style="color: red;" *ngIf="email?.hasError('minlength')">
+                Email must be at least 3 characters
+            </div>
+            <div style="color: red;" *ngIf="email?.hasError('maxlength')">
+                Email must be at most 10 characters
+            </div> -->
+
+
+            <tr>
+                <td>
+                    password:
+                </td>
+                <td>
+                    <input type="password" formControlName="password" />
+                </td>
+
+            </tr>
+
+            <br>
+            <div style="color: red;" *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+                Password is required
+            </div>
+            <div style="color: red;" *ngIf="password?.hasError('minlength')">
+                Password must be at least 3 characters
+            </div>
+
+            <tr>
+                <td>
+                    Confirm Password:
+                </td>
+                <td>
+                    <input type="password" formControlName="confirmPassword" />
+                </td>
+
+            </tr>
+
+            <br>
+            <div style="color: red;"
+                *ngIf="confirmPassword?.invalid && (confirmPassword?.dirty || confirmPassword?.touched)">
+                Confirm Password is required
+            </div>
+            <div style="color: red;" *ngIf="confirmPassword?.hasError('minlength')">
+                Confirm Password must be at least 3 characters
+            </div>
+            <div style="color: red;" *ngIf="confirmPassword?.hasError('passwordMismatch')">
+                Password and Confirm Password must match
+            </div>
+            <br>
+            <button type="submit" [disabled]="myForm.invalid">Submit</button>
+
+        </table>
+    </form>
+
+    <button (click)="onSubmit()">outOnsubmit</button>
+    <button form="out">IdOutSubmit</button>
+
+    <p>Form Value: {{myForm.value | json}}</p>
+
+    <p>Form Status: {{myForm.status}}</p>
+
+    <h1>{{nameVal}}</h1>
+    <h1>{{emailVal}}</h1>
+    <h1>{{passwordVal}}</h1>
+    <h1>{{confirmPasswordVal}}</h1>
+
+
+
+</div>
