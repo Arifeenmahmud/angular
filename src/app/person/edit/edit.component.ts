@@ -14,7 +14,7 @@ export class EditComponent implements OnInit {
     id: 0,
     name: '',
     address: '',
-    phone: 0
+    phone: 0,
   }
 
   constructor(
@@ -31,7 +31,7 @@ export class EditComponent implements OnInit {
     });
   }
   getById(id: number) {
-    this.personService.getById(this.personForm.id).subscribe((data) => {
+    this.personService.getById(id).subscribe((data) => {
       this.personForm = data;
     });
   }

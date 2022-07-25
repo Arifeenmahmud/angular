@@ -18,12 +18,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let person of allPerson">
-                        <td scope="row">{{person.id}}</td>
-                        <td>{{person.name}}</td>
-                        <td>{{person.address}}</td>
-                        <td>{{person.phone}}</td>
+                    <tr *ngFor="let item of allPerson">
+                        <td scope="row">{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.address}}</td>
+                        <td>{{item.phone}}</td>
                         <td>
+                            <a class="btn btn-primary" [routerLink]="['/person/edit', item.id]">Edit</a>
+                            <!-- <a class="btn btn-primary" routerLink="/person/edit/{{item.id}}">Edit</a> -->
+                            <!-- <a class="btn btn-primary" [routerLink]="['/person/edit/', item.id]">Edit</a> -->
+                            <!-- <a class="btn btn-danger" (click)="openDeleteModel(item.id)">Delete</a> -->
+                            <button type="button" (click)="openDeleteModal(item.id)"
+                                class="btn btn-danger">Delete</button>
+
+
                             <!-- <a [routerLink]="['/person', person.id]" class="btn btn-success">Edit</a> -->
                             <!-- <a (click)="deletePerson(person.id)" class="btn btn-danger">Delete</a> -->
                         </td>
@@ -32,5 +40,23 @@
             </table>
 
         </div>
+        <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Warning!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure to delete the item?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger" (click)="delete()">Confirm Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
     </div>

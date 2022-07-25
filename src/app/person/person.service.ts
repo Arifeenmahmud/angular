@@ -13,7 +13,7 @@ export class PersonService {
   }
 
   getById(id: number) {
-    return this.http.get<Person>(`http://localhost:3000/person/"${id}`);
+    return this.http.get<Person>(`http://localhost:3000/person/${id}`);
   }
 
   update(payload: Person) {
