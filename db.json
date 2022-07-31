@@ -4,7 +4,7 @@
       "id": 1,
       "name": "aaaaaff",
       "address": "bbb",
-      "phone": 4757
+      "phone": 47574345
     },
     {
       "id": 2,
@@ -47,12 +47,6 @@
       "name": "user",
       "address": "4dvxd",
       "phone": 4545
-    },
-    {
-      "id": 10,
-      "name": "ID",
-      "address": "",
-      "phone": 0
     }
   ]
 }

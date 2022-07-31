@@ -5,3 +5,5 @@ json-server --watch db.json
 ng generate module person --routing
 
 ng g c person/home
+
+ng g m component --routing
