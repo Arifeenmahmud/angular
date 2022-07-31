@@ -8,6 +8,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ClientsComponent } from './components/clients/clients.component';
 import { PortfolioGridComponent } from './components/portfolio-grid/portfolio-grid.component';
 import { ServicesComponent } from './components/services/services.component';
+import { NewloginComponent } from './newlogin/newlogin.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
       { path: '', component: HomeComponent }
     ]
   },
+  { path: 'newlogin', component: NewloginComponent }
 ];
 // [
 //   // { path: '', redirectTo: 'person/home', pathMatch: 'full' },

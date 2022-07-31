@@ -1,6 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,6 +18,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { InputFormatDirective } from './input-format.directive';
 import { TemplateComponent } from './components/template/template.component';
+import { NewloginComponent } from './newlogin/newlogin.component';
 
 @NgModule({
   declarations: [
@@ -33,14 +34,18 @@ import { TemplateComponent } from './components/template/template.component';
     ContactComponent,
     FooterComponent,
     InputFormatDirective,
-    TemplateComponent
+    TemplateComponent,
+    NewloginComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     PersonModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

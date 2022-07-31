@@ -1,0 +1,66 @@
+<div>
+    <h1>Login Form</h1>
+    <form [formGroup]="myForm" (ngSubmit)="onSubmit()" id="out">
+        <table>
+
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" formControlName="name" /></td>
+            </tr>
+            <br>
+            <div style="color: red;" *ngIf="name?.invalid && (name?.dirty || name?.touched)">
+                Name is required
+            </div>
+
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" formControlName="email" /></td>
+            </tr>
+
+
+            <br>
+            <div style="color: red;" *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+                Email is required
+            </div>
+            <div style="color: red;" *ngIf="email?.hasError('email')">
+                Email must be a valid email address
+            </div>
+
+            <tr>
+                <td>
+                    password:
+                </td>
+                <td>
+                    <input type="password" formControlName="password" />
+                </td>
+
+            </tr>
+
+            <br>
+            <div style="color: red;" *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+                Password is required
+            </div>
+            <div style="color: red;" *ngIf="password?.hasError('minlength')">
+                Password must be at least 3 characters
+            </div>
+
+            <br>
+            <button type="submit" [disabled]="myForm.invalid">Submit</button>
+
+        </table>
+    </form>
+
+    <!-- <button (click)="onSubmit()">outOnsubmit</button>
+    <button form="out">IdOutSubmit</button> -->
+
+    <p>Form Value: {{myForm.value | json}}</p>
+
+    <p>Form Status: {{myForm.status}}</p>
+
+    <h4>Name: {{nameVal}}</h4>
+    <h4>Email: {{emailVal}}</h4>
+    <h4>Password: {{passwordVal}}</h4>
+
+
+
+</div>
