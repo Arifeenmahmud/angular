@@ -37,22 +37,10 @@
       "phone": 57
     },
     {
-      "id": 7,
-      "name": "ok",
-      "address": "",
-      "phone": 0
-    },
-    {
       "id": 9,
       "name": "user",
       "address": "4dvxd",
       "phone": 4545
-    },
-    {
-      "id": 10,
-      "name": "",
-      "address": "",
-      "phone": 0
     }
   ]
 }

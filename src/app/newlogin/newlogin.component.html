@@ -56,7 +56,7 @@
 
 
 <div>
-    <h1>Login Form</h1>
+    <h1>Login to Join</h1>
     <form [formGroup]="myForm" (ngSubmit)="onSubmit()" id="out">
         <table>
 
@@ -103,7 +103,8 @@
 
             <br>
             <!-- <button type="submit" [disabled]="myForm.invalid">Submit</button> -->
-            <a routerLink="/person/home"><button class="btn btn-success pull-right"> Add Customer</button></a>
+            <a routerLink="/person/home"><button class="btn btn-success pull-right" [disabled]="myForm.invalid"> Add
+                    Customer</button></a>
 
 
         </table>
@@ -112,13 +113,13 @@
     <!-- <button (click)="onSubmit()">outOnsubmit</button>
     <button form="out">IdOutSubmit</button> -->
 
-    <p>Form Value: {{myForm.value | json}}</p>
+    <!-- <p>Form Value: {{myForm.value | json}}</p> -->
 
     <p>Form Status: {{myForm.status}}</p>
-
+    <!-- 
     <h4>Name: {{nameVal}}</h4>
     <h4>Email: {{emailVal}}</h4>
-    <h4>Password: {{passwordVal}}</h4>
+    <h4>Password: {{passwordVal}}</h4> -->
 
 
 
